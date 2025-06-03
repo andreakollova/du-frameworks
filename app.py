@@ -10,6 +10,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
+@app.route("/")
+def home():
+    return "Homepage"
 @app.route('/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
